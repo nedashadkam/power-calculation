@@ -1,0 +1,102 @@
+<!-- یک برنامه جاوا اسکریپت برای محاسبه توان یک عدد بنویسید -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+
+
+        div {
+            width: 15%;
+            padding: 2%;
+            background-color: aliceblue;
+            border: 1px solid navy;
+            margin-top: 30vh;
+            margin-left: 40%;
+        }
+
+        input {
+            width: 20%;
+            padding: 0px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            text-align: center;
+            background-color: beige;
+            border: 1px solid darkgray;
+            border-radius: 10px;
+        }
+
+        input:focus {
+            outline: 1px solid darkgray;
+        }
+
+        #power {
+            margin-left: 45px;
+        }
+
+        button {
+            margin-left: 60px;
+            margin-right: 10px;
+            background-color: #f9c58d;
+            border: 1px solid darkgray;
+            border-radius: 4px;
+        }
+
+
+        p {
+            margin-block: 0px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <p>
+            <input id="power">
+        </p>
+
+        <p>
+            <input id="number">
+            <button onclick="call()">=</button>
+            <input id="result">
+        </p>
+
+    </div>
+
+
+    <script>
+
+        let number, power, sum;
+
+        function call() {
+            sum = 1;
+            number = document.getElementById("number").value;
+            power = document.getElementById("power").value;
+            document.getElementById("result").value = output(+number, +power);
+        }
+
+
+        function output(a, b) {
+
+            sum *= a;
+            b -= 1;
+
+            if (b > 0) {
+                output(a, b);
+            }
+
+            return sum;
+        }
+
+    </script>
+
+</body>
+
+</html>
